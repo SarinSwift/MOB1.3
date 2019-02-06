@@ -26,6 +26,8 @@ class FirstViewController: UIViewController {
         if segue.identifier == "SecondViewSegue"{
             let secondVC = segue.destination as! SecondViewController
             
+            // secondVC.delegate = self
+            
             // completion handler!!
             secondVC.changeColor = { [weak self] (color) -> () in
                 self?.view.backgroundColor = color

@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
 //    var delegate: ColorDelegate?
     
     
-    // closure that takes in a color
+    // closure that takes in a color. This comes in instead of the delegate variable
     public var changeColor: ((UIColor?) -> ())?
     
     override func viewDidLoad() {
@@ -47,8 +47,7 @@ class SecondViewController: UIViewController {
         self.dismiss(animated: true) {
             let circle = tapGesture.view as? ColorView
             
-//            self.delegate?.changeColor(color: (circle?.mainColor)!)
-            
+            // self.delegate?.changeColor(color: (circle?.mainColor)!)
             
             // define the closure to change the FirtViewController's views background to the circle's mainColor
             guard let changeColor = self.changeColor else {
