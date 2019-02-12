@@ -12,6 +12,9 @@
 		049956D7220D0DB800571DDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049956D5220D0DB800571DDC /* Main.storyboard */; };
 		049956D9220D0DBA00571DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049956D8220D0DBA00571DDC /* Assets.xcassets */; };
 		049956DC220D0DBA00571DDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049956DA220D0DBA00571DDC /* LaunchScreen.storyboard */; };
+		049956E6220D0F1A00571DDC /* festivals.json in Resources */ = {isa = PBXBuildFile; fileRef = 049956E5220D0F1A00571DDC /* festivals.json */; };
+		049956EA220D129800571DDC /* FilmEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049956E9220D129800571DDC /* FilmEntry.swift */; };
+		049956EC220D130600571DDC /* FilmEntryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049956EB220D130600571DDC /* FilmEntryCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		049956D8220D0DBA00571DDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049956DB220D0DBA00571DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049956DD220D0DBA00571DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		049956E5220D0F1A00571DDC /* festivals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = festivals.json; sourceTree = SOURCE_ROOT; };
+		049956E9220D129800571DDC /* FilmEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntry.swift; sourceTree = "<group>"; };
+		049956EB220D130600571DDC /* FilmEntryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntryCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +60,15 @@
 		049956D0220D0DB800571DDC /* Festival */ = {
 			isa = PBXGroup;
 			children = (
+				049956E5220D0F1A00571DDC /* festivals.json */,
 				049956D1220D0DB800571DDC /* AppDelegate.swift */,
 				049956D3220D0DB800571DDC /* ViewController.swift */,
 				049956D5220D0DB800571DDC /* Main.storyboard */,
 				049956D8220D0DBA00571DDC /* Assets.xcassets */,
 				049956DA220D0DBA00571DDC /* LaunchScreen.storyboard */,
 				049956DD220D0DBA00571DDC /* Info.plist */,
+				049956E9220D129800571DDC /* FilmEntry.swift */,
+				049956EB220D130600571DDC /* FilmEntryCodable.swift */,
 			);
 			path = Festival;
 			sourceTree = "<group>";
@@ -125,6 +134,7 @@
 				049956DC220D0DBA00571DDC /* LaunchScreen.storyboard in Resources */,
 				049956D9220D0DBA00571DDC /* Assets.xcassets in Resources */,
 				049956D7220D0DB800571DDC /* Main.storyboard in Resources */,
+				049956E6220D0F1A00571DDC /* festivals.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049956EC220D130600571DDC /* FilmEntryCodable.swift in Sources */,
+				049956EA220D129800571DDC /* FilmEntry.swift in Sources */,
 				049956D4220D0DB800571DDC /* ViewController.swift in Sources */,
 				049956D2220D0DB800571DDC /* AppDelegate.swift in Sources */,
 			);
