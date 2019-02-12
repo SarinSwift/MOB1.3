@@ -95,8 +95,8 @@ class ViewController: UIViewController {
          // ACTION: Disable the Reset button
             resetButton.isEnabled = false
             
-            // ACTION: Change message label 
-           
+         // ACTION: Change message label
+            changeMessageLabel()
             
             if currentInterval == 0 && timeRemaining == pomodoroDuration {
                 // We are at the start of a cycle
@@ -108,6 +108,19 @@ class ViewController: UIViewController {
                 // ACTION: Resume the timer.
                 startTimer()
             }
+        }
+    }
+    
+    func changeMessageLabel() {
+        // checking which state it's currently in and we update the text accordingly!
+        if intervals[currentInterval] == .Pomodoro {
+            if currentInterval < 1 {
+                messageLabel.text = "Ready to start"
+            } else {
+                messageLabel.text = "Taking a break"
+            }
+        } else {
+            messageLabel.text = "Pomodoro session. Do not disturb."
         }
     }
     
@@ -131,7 +144,6 @@ class ViewController: UIViewController {
     
     func startTimer() {
         //ACTION: create the timer, selector should be runTimer()
-        
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
     }
     
