@@ -8,28 +8,62 @@
 
 import UIKit
 
+struct Participant: Codable {
+    let name: String
+    let id: String
+}
+
+struct City: Codable {
+    let name: String
+    let id: String
+}
+
+enum FestivalType: String, Codable {
+    case music
+    case food
+    case cinema
+}
+
+struct Festival: Codable{
+    let date: Date
+    let name: String
+    let city: City
+    let lineup: [Participant]
+    let type: FestivalType
+}
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var festivalArray = [Festival]()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        let path = Bundle.main.path(forResource: "locations", ofType: ".json")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        let path = Bundle.main.path(forResource: "festivals", ofType: ".json")
         if let path = path {
             let url = URL(fileURLWithPath: path)
+            // this url points to the one we set in the file at our root directory (festivals.json)
             print(url)
             let contents = try? Data(contentsOf: url, options: .alwaysMapped)
-            do {
-                if let data = contents,
-                    let jsonResult = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
-                    print(jsonResult)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(formatter)
+            
+            if let data = contents,
+                let festivals = try? decoder.decode([Festival].self, from: data) {
+                festivalArray = festivals
+                for f in festivalArray {
+                    for l in f.lineup {
+                        print(l.name)
+                    }
                 }
             }
-            
         }
     }
 
