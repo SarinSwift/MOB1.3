@@ -68,12 +68,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return festivalArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FestivalDataTableViewCell
+        let fest = festivalArray[indexPath.row]
+        print(fest)
         cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cell.festivalNameLabel.text = fest.name
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        
+        cell.festivalDate.text = formatter.string(from: fest.date)
+        cell.festivalNumberPeople.text = "\(fest.lineup.count)"
         return cell
     }
 }
