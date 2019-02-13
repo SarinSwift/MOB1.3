@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0400B9B42213A97600720075 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9B32213A97600720075 /* SWTableViewController.swift */; };
+		0400B9B72213B03800720075 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9B62213B03800720075 /* PeopleTableViewCell.swift */; };
 		44649B42220CB8B8008F8866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44649B41220CB8B8008F8866 /* AppDelegate.swift */; };
 		44649B44220CB8B8008F8866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44649B43220CB8B8008F8866 /* ViewController.swift */; };
 		44649B47220CB8B8008F8866 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44649B45220CB8B8008F8866 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0400B9B32213A97600720075 /* SWTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
+		0400B9B62213B03800720075 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		44649B3E220CB8B8008F8866 /* DailyPlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyPlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44649B41220CB8B8008F8866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44649B43220CB8B8008F8866 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0400B9B52213B01A00720075 /* SWPeoples */ = {
+			isa = PBXGroup;
+			children = (
+				0400B9B32213A97600720075 /* SWTableViewController.swift */,
+				0400B9B62213B03800720075 /* PeopleTableViewCell.swift */,
+			);
+			path = SWPeoples;
+			sourceTree = "<group>";
+		};
 		44649B35220CB8B8008F8866 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +112,7 @@
 			children = (
 				44649B41220CB8B8008F8866 /* AppDelegate.swift */,
 				44649B43220CB8B8008F8866 /* ViewController.swift */,
-				0400B9B32213A97600720075 /* SWTableViewController.swift */,
+				0400B9B52213B01A00720075 /* SWPeoples */,
 				44649B45220CB8B8008F8866 /* Main.storyboard */,
 				44649B48220CB8BA008F8866 /* Assets.xcassets */,
 				44649B4A220CB8BA008F8866 /* LaunchScreen.storyboard */,
@@ -259,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0400B9B72213B03800720075 /* PeopleTableViewCell.swift in Sources */,
 				44649B44220CB8B8008F8866 /* ViewController.swift in Sources */,
 				44649B42220CB8B8008F8866 /* AppDelegate.swift in Sources */,
 				0400B9B42213A97600720075 /* SWTableViewController.swift in Sources */,

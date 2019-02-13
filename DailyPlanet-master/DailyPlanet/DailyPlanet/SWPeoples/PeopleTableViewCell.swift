@@ -1,0 +1,17 @@
+//
+//  PeopleTableViewCell.swift
+//  DailyPlanet
+//
+//  Created by Sarin Swift on 2/12/19.
+//  Copyright © 2019 Make School. All rights reserved.
+//
+
+import UIKit
+
+class PeopleTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var birthLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    
+}
