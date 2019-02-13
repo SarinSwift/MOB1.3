@@ -13,6 +13,7 @@
 		0400B9A122136D9B00720075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0400B9A022136D9B00720075 /* Assets.xcassets */; };
 		0400B9A422136D9B00720075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0400B9A222136D9B00720075 /* LaunchScreen.storyboard */; };
 		0400B9AC2213718000720075 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9AB2213718000720075 /* Post.swift */; };
+		0400B9B122138BF900720075 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9B022138BF900720075 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0400B9A322136D9B00720075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0400B9A522136D9B00720075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0400B9AB2213718000720075 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0400B9B022138BF900720075 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0400B99922136D9A00720075 /* AppDelegate.swift */,
 				0400B9AE2213719500720075 /* ViewControllers */,
+				0400B9B222138C0200720075 /* Cells */,
 				0400B9AD2213718600720075 /* Models */,
 				0400B9AF221371A200720075 /* Storyboards */,
 				0400B9A022136D9B00720075 /* Assets.xcassets */,
@@ -89,6 +92,14 @@
 				0400B9A222136D9B00720075 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0400B9B222138C0200720075 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0400B9B022138BF900720075 /* PostTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				0400B9AC2213718000720075 /* Post.swift in Sources */,
 				0400B99C22136D9A00720075 /* FeedViewController.swift in Sources */,
 				0400B99A22136D9A00720075 /* AppDelegate.swift in Sources */,
+				0400B9B122138BF900720075 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
