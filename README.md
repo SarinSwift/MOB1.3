@@ -63,7 +63,15 @@
 - Debuging memory leaks in Xcode
 - Weak and unowned self for closures and variables
 
-**[JSON in iOS](https://github.com/SarinSwift/MOB1.3/tree/master/Festival)**
+**[Festival](https://github.com/SarinSwift/MOB1.3/tree/master/Festival)**
 - Read JSON data from a file
 - Serializing a programs internal data structure into some kind of interchange formate using decode and encode
 - Creating types conformin to the Codeable protocol (this allows us to create an encoder and decoder)
+
+**[DailyPlanet](https://github.com/SarinSwift/MOB1.3/tree/master/DailyPlanet-master)**
+*Feb.12*
+1. Configure session
+2. Set up the request
+3. Make the request
+4. Handle the response
+5. Present results
