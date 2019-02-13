@@ -9,26 +9,13 @@
 import UIKit
 
 class SWTableViewController: UITableViewController {
+    
+    var peopleArray = [Person]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchStarWarsPeople()
-    }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId") as! PeopleTableViewCell
-        return cell
     }
     
     func fetchStarWarsPeople() {
@@ -38,12 +25,31 @@ class SWTableViewController: UITableViewController {
             let request = URLRequest(url: url)
             
             let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                print("data is: ", data!)
-                print("response is: ", response!)
+                //                print("data is: ", data!)
+                //                print("response is: ", response!)
                 
                 do {
-                    let jsonObject = try JSONSerialization.jsonObject(with: data!, options: [])
-                    print(jsonObject)
+                    let jsonObject = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                    //                    print(jsonObject)
+                    
+                    if let resultsArray = jsonObject["results"] as? [[String:Any]] {
+//                        self.peopleArray = resultsArray
+                        for entry in resultsArray{
+                            let person = Person(dict: entry)
+                            self.peopleArray.append(person!)
+                        }
+                        
+                    }
+                    
+                    
+                    print(self.peopleArray)
+                    
+                    DispatchQueue.main.async {
+                        print(self.peopleArray)
+
+                        self.tableView.reloadData()
+                    }
+                    
                 } catch {
                     print("JSON error: \(error.localizedDescription)")
                 }
@@ -51,5 +57,23 @@ class SWTableViewController: UITableViewController {
             dataTask.resume()
         }
     }
+
+    // MARK: - Table view data source
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return peopleArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId") as! PeopleTableViewCell
+        cell.peopleLabel.text = "\(peopleArray[indexPath.row].name)"
+        return cell
+    }
+    
+    
 
 }
