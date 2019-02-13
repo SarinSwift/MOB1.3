@@ -15,7 +15,7 @@ struct Person {
     
     init?(dict: [String: Any]) {
         self.name = dict["name"] as? String ?? ""
-        self.birthDate = dict["birth_date"] as? String ?? ""
+        self.birthDate = dict["birth_year"] as? String ?? ""
         self.height = dict["height"] as? String ?? ""
     }
     

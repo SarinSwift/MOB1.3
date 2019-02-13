@@ -14,4 +14,13 @@ class PeopleTableViewCell: UITableViewCell {
     @IBOutlet weak var birthLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     
+    var person: Person? {
+        didSet {
+            guard let person = person else { return }
+            peopleLabel.text = person.name
+            birthLabel.text = "Birth year: \(person.birthDate)"
+            heightLabel.text = "Height: \(person.height)"
+        }
+    }
+    
 }

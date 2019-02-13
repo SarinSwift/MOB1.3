@@ -68,9 +68,20 @@ class SWTableViewController: UITableViewController {
         return 120
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId") as! PeopleTableViewCell
-        cell.peopleLabel.text = "\(peopleArray[indexPath.row].name)"
+//        cell.peopleLabel.text = "\(peopleArray[indexPath.row].name)"
+        cell.person = peopleArray[indexPath.row]
         return cell
     }
     
