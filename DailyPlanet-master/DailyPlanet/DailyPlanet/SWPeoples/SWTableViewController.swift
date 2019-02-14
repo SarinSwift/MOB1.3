@@ -11,29 +11,26 @@ import UIKit
 class SWTableViewController: UITableViewController {
     
     var peopleArray = [Person]()
+    // number of page that will increment by 1 each time we scroll to the end of the tableView
+    var number = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchStarWarsPeople()
+        fetchStarWarsPeople(urlInput: "https://swapi.co/api/people")
     }
     
-    func fetchStarWarsPeople() {
+    func fetchStarWarsPeople(urlInput: String) {
         let defaultSession = URLSession(configuration: .default)
         
-        if let url = URL(string: "https://swapi.co/api/people") {
+        if let url = URL(string: urlInput) {
             let request = URLRequest(url: url)
             
             let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                //                print("data is: ", data!)
-                //                print("response is: ", response!)
-                
                 do {
                     let jsonObject = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-                    //                    print(jsonObject)
-                    
+                    print(jsonObject["next"]!)
                     if let resultsArray = jsonObject["results"] as? [[String:Any]] {
-//                        self.peopleArray = resultsArray
                         for entry in resultsArray{
                             let person = Person(dict: entry)
                             self.peopleArray.append(person!)
@@ -68,16 +65,6 @@ class SWTableViewController: UITableViewController {
         return 120
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-        return view
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId") as! PeopleTableViewCell
 //        cell.peopleLabel.text = "\(peopleArray[indexPath.row].name)"
@@ -85,6 +72,49 @@ class SWTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastItem = peopleArray.count - 1
+        if indexPath.item == lastItem {
+            // request more information
+            loadMoreData(number: number)
+            if number < 8 {
+                number += 1
+            }
+        }
+    }
     
+    func loadMoreData(number: Int) {
+        let urlInput = "https://swapi.co/api/people/?page=\(number)"
+        fetchAPINextPage(urlInput: urlInput)
+    }
+    
+    func fetchAPINextPage(urlInput: String) {
+        let defaultSession = URLSession(configuration: .default)
+        
+        if let url = URL(string: urlInput) {
+            let request = URLRequest(url: url)
+            
+            let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+                do {
+                    let jsonObject = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                    if let resultsArray = jsonObject["results"] as? [[String:Any]] {
+                        for entry in resultsArray{
+                            let person = Person(dict: entry)
+                            self.peopleArray.append(person!)
+                        }
+                        
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                } catch {
+                    print("JSON error: \(error.localizedDescription)")
+                }
+            })
+            dataTask.resume()
+        }
+    }
 
 }
