@@ -10,17 +10,32 @@ import UIKit
 
 class CommentViewController: UIViewController {
     
-    var comments: [String]! {
+    var comments: [Comment] = [] {
         didSet {
-            
+            tableView.reloadData()
         }
     }
+    
+    var postId: Int!
+    var networkManager = NetworkManager()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateComments()
+    }
+    
+    func updateComments() {
+        networkManager.getComments(postId) { (result) in
+            switch result {
+            case let .succes(comments):
+                self.comments = comments
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
 
 }
@@ -33,7 +48,7 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentTableViewCell
-        cell.commentsTextView.text = comments[indexPath.row]
+        cell.commentsTextView.text = comments[indexPath.row].body
         return cell
     }
     
