@@ -15,6 +15,8 @@
 		0400B9AC2213718000720075 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9AB2213718000720075 /* Post.swift */; };
 		0400B9B122138BF900720075 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9B022138BF900720075 /* PostTableViewCell.swift */; };
 		0400B9BB2215E5B400720075 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9BA2215E5B400720075 /* NetworkManager.swift */; };
+		0400B9BD2215FEB700720075 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9BC2215FEB700720075 /* CommentViewController.swift */; };
+		0400B9BF2215FF0500720075 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9BE2215FF0500720075 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0400B9AB2213718000720075 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0400B9B022138BF900720075 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		0400B9BA2215E5B400720075 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0400B9BC2215FEB700720075 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		0400B9BE2215FF0500720075 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0400B99B22136D9A00720075 /* FeedViewController.swift */,
+				0400B9BC2215FEB700720075 /* CommentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0400B9B022138BF900720075 /* PostTableViewCell.swift */,
+				0400B9BE2215FF0500720075 /* CommentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 			files = (
 				0400B9AC2213718000720075 /* Post.swift in Sources */,
 				0400B99C22136D9A00720075 /* FeedViewController.swift in Sources */,
+				0400B9BD2215FEB700720075 /* CommentViewController.swift in Sources */,
 				0400B9BB2215E5B400720075 /* NetworkManager.swift in Sources */,
+				0400B9BF2215FF0500720075 /* CommentTableViewCell.swift in Sources */,
 				0400B99A22136D9A00720075 /* AppDelegate.swift in Sources */,
 				0400B9B122138BF900720075 /* PostTableViewCell.swift in Sources */,
 			);
