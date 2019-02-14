@@ -17,6 +17,7 @@
 		0400B9BB2215E5B400720075 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9BA2215E5B400720075 /* NetworkManager.swift */; };
 		0400B9BD2215FEB700720075 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9BC2215FEB700720075 /* CommentViewController.swift */; };
 		0400B9BF2215FF0500720075 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9BE2215FF0500720075 /* CommentTableViewCell.swift */; };
+		0400B9C12216174800720075 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400B9C02216174800720075 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0400B9BA2215E5B400720075 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0400B9BC2215FEB700720075 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		0400B9BE2215FF0500720075 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		0400B9C02216174800720075 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0400B9AB2213718000720075 /* Post.swift */,
+				0400B9C02216174800720075 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				0400B9AC2213718000720075 /* Post.swift in Sources */,
 				0400B99C22136D9A00720075 /* FeedViewController.swift in Sources */,
 				0400B9BD2215FEB700720075 /* CommentViewController.swift in Sources */,
+				0400B9C12216174800720075 /* Comment.swift in Sources */,
 				0400B9BB2215E5B400720075 /* NetworkManager.swift in Sources */,
 				0400B9BF2215FF0500720075 /* CommentTableViewCell.swift in Sources */,
 				0400B99A22136D9A00720075 /* AppDelegate.swift in Sources */,
