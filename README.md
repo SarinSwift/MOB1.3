@@ -75,3 +75,12 @@
 3. Make the request
 4. Handle the response
 5. Present results
+
+## [Product Hunt](https://github.com/SarinSwift/MOB1.3/tree/master/ProductHunt)
+[MS Tutorial](https://www.makeschool.com/academy/track/standalone/product-hunt-api-tutorial/getting-started)
+1. How to work with APIs.
+2. How to build a network layer in Swift.
+3. How to decode JSON into Swift models.
+4. How to take advantage of mock data.
+5. How to display data in tableviews with custom UI.
+
