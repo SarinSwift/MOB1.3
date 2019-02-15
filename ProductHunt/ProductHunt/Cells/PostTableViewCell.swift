@@ -25,12 +25,26 @@ class PostTableViewCell: UITableViewCell {
             taglineLabel.text = post.tagline
             commentsCountLabel.text = "Comments: \(post.commentsCount)"
             votesCountLabel.text = "Votes: \(post.votesCount)"
-            updatePreviewImage()
+            updatePreviewImage(from: post.previewImageUrl)
         }
     }
     
-    func updatePreviewImage() {
-        guard let post = post else { return }
-        previewImageView.image = UIImage(named: "placeholder")
+    //
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func updatePreviewImage(from url: URL) {
+//        previewImageView.image = UIImage(data: )
+//        guard let post = post else { return }
+        print("Download Started")
+        getData(from: url) { (data, response, error) in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async {
+                self.previewImageView.image = UIImage(data: data)
+            }
+        }
     }
 }
