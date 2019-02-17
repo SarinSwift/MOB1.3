@@ -77,8 +77,6 @@ if let jsonDataFromString = jsonString.data(using: .utf8) {
 
 
 
-
-
 // CODINGKEYS used
 // Handling different key names in JSON and Model class/struct
 class Book: NSObject, Codable {
