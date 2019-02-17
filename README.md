@@ -21,6 +21,15 @@
 - Conforming to protocols
 - Protocol / Delegate / Delegator
 
+**[Memory management](https://github.com/SarinSwift/MOB1.3/tree/master/ARC.playground)**
+*Feb.17*
+- Reference counting: A technique of storing number of references, pointers, objects, block or memory, disk space, etc.
+Reference counting, however, only applies to instances of a class since classes are reference types.
+- ARC helps store references into memory and helps clean up when it's not being used! ARC allocates new memory everytime a class instance is created through init(). That chunk of memory holds the instance together with the values of the property. Once the instance is no longer needed, ARC deallocates that memory space of that instance and calls deinit().  
+**Weak reference:** ARC automatically sets weak references to 'nil' when the instance is deallocated hence the use of 'var' instead of 'let'.  
+**Unowned reference:** always has a value. ARC will never set unowned references to nil, so we declare them using non optional types. If you try access the value of an unowned reference after that instance has been deallocated, you will get a runtime error.
+
+
 ## Class Exercises
 **[Closures](https://github.com/SarinSwift/MOB1.3/tree/master/Exercises1.playground)**
 - Writing closures
