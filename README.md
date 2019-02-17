@@ -29,6 +29,13 @@ Reference counting, however, only applies to instances of a class since classes 
 **Weak reference:** ARC automatically sets weak references to 'nil' when the instance is deallocated hence the use of 'var' instead of 'let'.  
 **Unowned reference:** always has a value. ARC will never set unowned references to nil, so we declare them using non optional types. If you try access the value of an unowned reference after that instance has been deallocated, you will get a runtime error.
 
+**[JSON Serialization](https://github.com/SarinSwift/MOB1.3/tree/master/jsonCodable.playground)**
+*Feb.17*
+- Codable: Adopting to Codable protocols allows you to serialize them to and from the built-in data formats. You can encode and decode from XML, Property List, JSONEncode, JSONDecoder.  
+**Encoding:** allows you to covert from your type to 'Data'  
+**Decoding:** converts from Jsondata back to an instance, or in other words, back into our data model.  
+**CodingKeys:** CodingKeys are enum type nested in your type which conforms to String, and CodingKey. You must include all properties(cases) in the enum even if you're not renaming them.
+
 
 ## Class Exercises
 **[Closures](https://github.com/SarinSwift/MOB1.3/tree/master/Exercises1.playground)**
