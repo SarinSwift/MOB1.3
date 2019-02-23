@@ -49,14 +49,11 @@ enum ImageRequestError: Error {
 
 struct PhotoFetchService {
     
-    //TODO: Put your API Key, baseURLString, and flickrMethod method variables here...
     private let APIKey = apiKey
     private let baseURLString = "https://api.flickr.com/services/rest"
     private let flickrMethod = "flickr.interestingness.getList"
     
  
-    //TODO: Place any variables required for Network calls and JSON processing functions here...
-    
     
     func processImageRequest(data: Data?, error: Error?) -> ImageFetchResult {
         
@@ -181,7 +178,7 @@ struct PhotoFetchService {
     }
     
     private func createPhotoItem(fromJSON json: [String : Any]) -> Photo? {
-        
+
         guard
             let title = json["title"] as? String,
             let dateAsString = json["datetaken"] as? String,
@@ -194,10 +191,6 @@ struct PhotoFetchService {
         }
         return Photo(title: title, dateTaken: dateTaken as Date, photoID: photoID, remoteURL: url)
     }
-
-   
-    //TODO: Refactor/move Network calls and JSON processing functions here...
-    
 
     
 }
