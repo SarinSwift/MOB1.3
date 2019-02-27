@@ -17,11 +17,8 @@ import Alamofire
 
 class AlamoFireApiService {
     
-    let endpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
-    
-    
     func getRequest() {
-        
+        let endpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
         AF.request(endpoint).responseJSON { response in
             // handle response
             guard response.result.error == nil else {
@@ -49,39 +46,46 @@ class AlamoFireApiService {
     func postRequest() {
         let endpoint: String = "https://jsonplaceholder.typicode.com/todos"
         let paramaters: [String : Any] = ["title": "Super Cool Post", "completed": 0, "userId": 8]
-        
-        // this request method receives no parameters so we use the bottom one
-//        AF.request(endpoint, method: .post).responseJSON { response in
-//            // handle response
-//
-//            guard response.result.error == nil else {
-//                print(response.result.error!)
-//                return
-//            }
-//
-//            print(response)
-//        }
 
-        AF.request(endpoint, method: .post, parameters: paramaters).responseJSON { response in
+        AF.request(endpoint, method: .post, parameters: paramaters, encoding: JSONEncoding.default).responseJSON { response in
             guard response.result.error == nil else {
+                // got an error in getting the data, need to handle it
+                print("Error calling POST on /todos/1")
                 print(response.result.error!)
                 return
             }
-
-            print(response)
+            
+            // Make sure we have the JSON since that is what we expect
+            guard let json = response.result.value as? [String: Any] else {
+                print("didn't get the parameter object as json API")
+                print("Error: \(String(describing: response.result.error))")
+                return
+            }
+            print(json)
+            
+            // get and print the title
+            guard let todoTitle = json["title"] as? String else {
+                print("Could not get todoTitle from json")
+                return
+            }
+            
+            print("The title is \(todoTitle)")
         }
         
     }
     
     // a function that implements a DELETE request using Using Alamofire
     func deleteRequest() {
+        let endpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
         AF.request(endpoint, method: .delete).responseJSON { response in
             guard response.result.error == nil else {
+                // got an error in getting the data, need to handle it
+                print("Error calling DELETE on /todos/1")
                 print(response.result.error!)
                 return
             }
             
-            print(response)
+            print("DELETE Ok")
         }
     }
     

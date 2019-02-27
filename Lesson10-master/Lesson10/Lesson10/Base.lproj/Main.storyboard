@@ -32,9 +32,8 @@
                                     <action selector="urlSessionPostBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8d9-S3-fYL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzr-x5-2KS">
-                                <rect key="frame" x="124" y="397" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzr-x5-2KS">
+                                <rect key="frame" x="124.5" y="388" width="126" height="30"/>
                                 <state key="normal" title="DELETE (Alamore)"/>
                                 <connections>
                                     <action selector="alamofireDeleteBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKu-Ck-xJQ"/>
@@ -44,9 +43,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QE9-bs-5cf" firstAttribute="centerX" secondItem="ar8-VT-bws" secondAttribute="centerX" id="4Av-yn-He4"/>
+                            <constraint firstItem="Pzr-x5-2KS" firstAttribute="top" secondItem="ar8-VT-bws" secondAttribute="bottom" constant="80" id="9Nh-87-CTK"/>
                             <constraint firstItem="QE9-bs-5cf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L61-OP-jeN"/>
                             <constraint firstItem="ar8-VT-bws" firstAttribute="top" secondItem="QE9-bs-5cf" secondAttribute="bottom" constant="80" id="coE-QG-148"/>
                             <constraint firstItem="QE9-bs-5cf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="n54-cG-s0j"/>
+                            <constraint firstItem="Pzr-x5-2KS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y2f-fy-AlJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
