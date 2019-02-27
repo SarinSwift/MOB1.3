@@ -36,6 +36,24 @@ Reference counting, however, only applies to instances of a class since classes 
 **Decoding:** converts from Jsondata back to an instance, or in other words, back into our data model.  
 **CodingKeys:** CodingKeys are enum type nested in your type which conforms to String, and CodingKey. You must include all properties(cases) in the enum even if you're not renaming them.
 
+**[Alamofire](https://github.com/Alamofire/Alamofire)**
+*Feb.26*  
+Alamofire: A networking library for iOS which seeks to simplify handling requests and responses, serializing json, authentication, etc.  
+
+* Methods available:  
+  - Alamofire.upload: Upload files with multipart, stream, file or data methods.  
+  - Alamofire.download: Download files or resume a download already in progress.  
+  - Alamofire.request: Requests not associated with file transfers.  
+
+Alamofire is built to be asynchronous(in the background) - allows to safely access the network without having to worry about the threads. 
+The main thread is responsible for runningthe user interface. So, if you block the main thread for any amount of significant time, the user interface will become unacceptably unresponsive.   
+* Benefits:  
+   - Provides easily accessible utilities methods to make quick and dirty requests.  
+   - You can chain a response handler via a closure to parse the response or to handle any errors during the networking request  
+   - Parameters: Has the ability to post data to a server or specify what one is querying for.  
+   - Can reduce boilerplate code in your project / Makes code look cleaner  
+   - Large corporations use these third party libraries!  
+
 
 ## Class Exercises
 **[Closures](https://github.com/SarinSwift/MOB1.3/tree/master/Exercises1.playground)**
@@ -91,6 +109,12 @@ Reference counting, however, only applies to instances of a class since classes 
 3. Make the request
 4. Handle the response
 5. Present results
+
+**[Lesson10-master](https://github.com/SarinSwift/MOB1.3/tree/master/Lesson10-master)**
+*Feb.26*
+- Make network requests using Alamofire
+- Used get, post, annd delete methods
+
 
 ## [Product Hunt](https://github.com/SarinSwift/MOB1.3/tree/master/ProductHunt)
 [MS Tutorial](https://www.makeschool.com/academy/track/standalone/product-hunt-api-tutorial/getting-started)
