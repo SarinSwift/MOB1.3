@@ -32,6 +32,14 @@
                                     <action selector="urlSessionPostBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8d9-S3-fYL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzr-x5-2KS">
+                                <rect key="frame" x="124" y="397" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DELETE (Alamore)"/>
+                                <connections>
+                                    <action selector="alamofireDeleteBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKu-Ck-xJQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -43,6 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="alamofireDeleteBtn" destination="Pzr-x5-2KS" id="7dp-lb-kU3"/>
                         <outlet property="alamofirePostBtn" destination="ar8-VT-bws" id="DFM-he-b4m"/>
                         <outlet property="urlSessionPostBtn" destination="QE9-bs-5cf" id="amY-y4-H6g"/>
                     </connections>
