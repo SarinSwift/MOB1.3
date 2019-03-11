@@ -35,7 +35,6 @@
 //function that takes in an int and returns a string of that int
 func convertNumberIntoString(number: Int) -> String {
     let stringFromNumber = String(number)
-    
     return stringFromNumber
 }
 

@@ -18,8 +18,6 @@ let twoInts: (Int, Int) -> Int = { int1, int2 in
 }
 twoInts(3, 10)
 
-
-
 /*:
 Exercise 3
 Write a closure that returns the value 42, without assigning the closure to a variable. Immediately call the closure and also ignore the return value from the closure.
